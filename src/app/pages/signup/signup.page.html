@@ -1,0 +1,153 @@
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col sizeXs="12" sizeMd="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Cadastre-se</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <form [formGroup]="form" (submit)="login(form.value)">
+              <ion-list>
+
+                <ion-item>
+                  <ion-label position="floating">Nome</ion-label>
+                  <ion-input type="text" formControlName="name" clearInput></ion-input>
+                </ion-item>
+                <div *ngIf="form.controls.name.errors && !form.controls.name.pristine" class="form-errors">
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.name.errors.required">
+                        Campo obrigatório
+                      </small>
+                    </ion-text>
+                  </p>
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.name.errors.onlyText">
+                        Campo somente letras
+                      </small>
+                    </ion-text>
+                  </p>
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.name.errors.maxlength">
+                        Máximo de 80 caracteres
+                      </small>
+                    </ion-text>
+                  </p>
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.name.errors.minlength">
+                        Mínimo de 3 caracteres
+                      </small>
+                    </ion-text>
+                  </p>
+                </div>
+
+                <ion-item>
+                  <ion-label position="floating">E-mail</ion-label>
+                  <ion-input type="email" formControlName="email" clearInput></ion-input>
+                </ion-item>
+                <div *ngIf="form.controls.email.errors && !form.controls.email.pristine">
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.email.errors.required">
+                        Campo obrigatório
+                      </small>
+                    </ion-text>
+                  </p>
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.email.errors.email">
+                        E-mail inválido
+                      </small>
+                    </ion-text>
+                  </p>
+                </div>
+
+                <ion-item>
+                  <ion-label position="floating">Senha</ion-label>
+                  <ion-input type="password" formControlName="password" clearInput></ion-input>
+                </ion-item>
+                <div *ngIf="form.controls.password.errors && !form.controls.password.pristine">
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.password.errors.required">
+                        Campo obrigatório
+                      </small>
+                    </ion-text>
+                  </p>
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.password.errors.minlength">
+                        Mínimo de 6 caracteres
+                      </small>
+                    </ion-text>
+                  </p>
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.password.errors.maxlength">
+                        Máximo de 20 caracteres
+                      </small>
+                    </ion-text>
+                  </p>
+                </div>
+
+                <ion-item>
+                  <ion-label position="floating">Confirmar senha</ion-label>
+                  <ion-input type="password" formControlName="password_confirm" clearInput></ion-input>
+                </ion-item>
+                <div *ngIf="form.controls.password_confirm.errors && !form.controls.password_confirm.pristine">
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.password_confirm.errors.required">
+                        Campo obrigatório
+                      </small>
+                    </ion-text>
+                  </p>
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.password_confirm.errors.minlength">
+                        Mínimo de 6 caracteres
+                      </small>
+                    </ion-text>
+                  </p>
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.password_confirm.errors.maxlength">
+                        Máximo de 20 caracteres
+                      </small>
+                    </ion-text>
+                  </p>
+                  <p>
+                    <ion-text color="danger">
+                      <small *ngIf="form.controls.password_confirm.errors.equals">
+                        As senhas não conferem
+                      </small>
+                    </ion-text>
+                  </p>
+                </div>
+
+              </ion-list>
+
+              <p>
+                <ion-button type="submit" color="primary" shape="round" fsize="large" expand="full">
+                  Cadastrar e entrar
+                </ion-button>
+                <br />
+                <ion-button routerLink="/login" color="secondary" fill="clear" size="small" expand="full">
+                  Autenticar
+                </ion-button>
+              </p>
+
+            </form>
+          </ion-card-content>
+
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
