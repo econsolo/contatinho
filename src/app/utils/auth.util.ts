@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment';
 export class AuthUtil {
 
     static set(auth: any): void {
-        localStorage.setItem(environment.authKey, auth);
+        localStorage.setItem(environment.authKey, JSON.stringify(auth));
     }
 
     static get(): any {
@@ -13,5 +13,9 @@ export class AuthUtil {
             return null;
 
         return JSON.parse(auth);
+    }
+
+    static clear(): void {
+        localStorage.removeItem(environment.authKey);
     }
 }

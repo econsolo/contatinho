@@ -29,13 +29,19 @@ export class SignupPage implements OnInit {
   }
 
   public save(user: any): void {
-
-    this.userService.save(user).subscribe((auth: any) => {
-      this.login(auth);
+    this.userService.save(user).subscribe(() => {
+      this.login({
+        email: user.email,
+        password: user.password
+      });
     });
 
   }
 
+  public back(): void {
+    this.nav.navigateBack('/login');
+  }
+  
   private login(auth: any): void {
     this.authService.login(auth).subscribe((res: any) => {
       AuthUtil.set(res);
@@ -54,8 +60,7 @@ export class SignupPage implements OnInit {
       name: ['', [
         Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(80),
-        CustomValidator.onlyText
+        Validators.maxLength(80)
       ]],
       email: ['', [
         Validators.required,

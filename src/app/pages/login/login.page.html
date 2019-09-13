@@ -1,9 +1,38 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col sizeXs="12" sizeMd="6">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Autentique-se</ion-card-title>
+          </ion-card-header>
 
-<ion-content>
+          <ion-card-content>
+            <form [formGroup]="form" (submit)="login(form.value)">
+              <ion-list>
 
+                <app-input-feedback type="email" [control]="form.controls.email" label="E-mail"></app-input-feedback>
+                <app-input-feedback type="password" [control]="form.controls.password" label="Senha"></app-input-feedback>
+
+              </ion-list>
+
+              <p>
+                <ion-button type="submit" color="primary" shape="round" fsize="large" expand="full"
+                  [disabled]="form.invalid">
+                  Entrar
+                </ion-button>
+                <br />
+                <ion-button routerLink="/signup" color="secondary" fill="clear" size="small" expand="full">
+                  Criar uma conta
+                </ion-button>
+              </p>
+
+            </form>
+          </ion-card-content>
+
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

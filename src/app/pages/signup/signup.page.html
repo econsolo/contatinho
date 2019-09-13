@@ -8,7 +8,7 @@
           </ion-card-header>
 
           <ion-card-content>
-            <form [formGroup]="form" (submit)="login(form.value)">
+            <form [formGroup]="form" (submit)="save(form.value)">
               <ion-list>
 
                 <ion-item>
@@ -133,7 +133,7 @@
               </ion-list>
 
               <p>
-                <ion-button type="submit" color="primary" shape="round" fsize="large" expand="full">
+                <ion-button type="submit" color="primary" shape="round" fsize="large" expand="full" [disabled]="form.invalid">
                   Cadastrar e entrar
                 </ion-button>
                 <br />

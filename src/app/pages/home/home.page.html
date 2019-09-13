@@ -1,14 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-list>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
-</ion-content>
+  <ion-item-sliding *ngFor="let c of contacts | async">
+    <ion-item class="click" (click)="goToContact(c.id)">
+      <ion-avatar slot="start">
+        <img [src]="c.image" [alt]="c.name">
+      </ion-avatar>
+      <ion-label>{{ c.name }}</ion-label>
+      <ion-icon name="arrow-forward"></ion-icon>
+    </ion-item>
+    <ion-item-options side="start">
+      <ion-item-option color="danger" (click)="delete(c.id)">Remover</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+</ion-list>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="primary" (click)="newContact()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
