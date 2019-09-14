@@ -34,8 +34,8 @@ export class LoginPage implements OnInit {
     });
   }
 
-  public signup(): void {
-    this.nav.navigateForward('/signup');
+  public goTo(route: string): void {
+    this.nav.navigateForward(route);
   }
 
   private createFormGroup(): FormGroup {

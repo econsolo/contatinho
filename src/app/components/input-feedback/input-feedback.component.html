@@ -1,6 +1,6 @@
 <ion-item>
   <ion-label position="floating">{{ label }}</ion-label>
-  <ion-input [type]="type" [formControl]="control" clearInput></ion-input>
+  <ion-input [type]="type" [formControl]="control" clearInput [mask]="mask"></ion-input>
 </ion-item>
 <div *ngIf="control.errors && !control.pristine">
   <p *ngFor="let error of getErrors()">

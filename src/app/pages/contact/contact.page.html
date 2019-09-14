@@ -1,41 +1,34 @@
-<ion-grid>
-  <ion-row class="ion-justify-content-center">
-    <ion-col sizeXs="12" sizeMd="12">
-      <ion-card>
-        <ion-card-header>
-          <ion-card-title>Contato</ion-card-title>
-        </ion-card-header>
+<ion-card sizeXs="12" sizeMd="12" class="ion-justify-content-center">
+  <ion-card-header>
+    <ion-card-title>Contato</ion-card-title>
+  </ion-card-header>
 
-        <ion-card-content>
-          <form [formGroup]="form" (submit)="save(form.value)">
-            <ion-list>
+  <ion-card-content>
+    <form [formGroup]="form" (submit)="save(form.value)">
+      <ion-list>
 
-              <app-input-feedback type="text" [control]="form.controls.name" label="Nome"></app-input-feedback>
+        <app-input-feedback type="text" [control]="form.controls.name" label="Nome"></app-input-feedback>
 
-              <app-input-feedback type="email" [control]="form.controls.email" label="E-mail"></app-input-feedback>
+        <app-input-feedback type="email" [control]="form.controls.email" label="E-mail"></app-input-feedback>
 
-              <app-input-feedback type="tel" [control]="form.controls.phone" label="Celular"></app-input-feedback>
+        <app-input-feedback type="tel" mask="(##) #####-####" [control]="form.controls.phone" label="Celular"></app-input-feedback>
 
-              <app-input-feedback type="text" [control]="form.controls.address" label="Endereço"></app-input-feedback>
+        <app-input-feedback type="text" [control]="form.controls.address" label="Endereço"></app-input-feedback>
 
-            </ion-list>
+      </ion-list>
 
-            <p>
-              <ion-button type="submit" color="primary" shape="round" fsize="large" expand="full"
-                [disabled]="form.invalid">
-                Salvar
-              </ion-button>
-              <br />
-              <ion-button (click)="back()" color="danger" fill="clear" size="small" expand="full">
-                Cancelar
-              </ion-button>
-            </p>
+      <p>
+        <ion-button type="submit" color="primary" shape="round" fsize="large" expand="full"
+          [disabled]="form.invalid">
+          Salvar
+        </ion-button>
+        <br />
+        <ion-button (click)="back()" color="danger" fill="clear" size="small" expand="full">
+          Cancelar
+        </ion-button>
+      </p>
 
-          </form>
-        </ion-card-content>
+    </form>
+  </ion-card-content>
 
-      </ion-card>
-
-    </ion-col>
-  </ion-row>
-</ion-grid>
+</ion-card>

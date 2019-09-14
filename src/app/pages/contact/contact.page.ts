@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from 'src/app/services/contact.service';
-import { ToastController, NavController } from '@ionic/angular';
+import { ToastController, NavController, ActionSheetController } from '@ionic/angular';
 import { CustomValidator } from 'src/app/validators/custom.validator';
 import { ToastUtil } from 'src/app/utils/toast.util';
 import { ActivatedRoute } from '@angular/router';
@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContactPage implements OnInit {
 
-  private form: FormGroup;
+  public form: FormGroup;
 
   constructor(private fb: FormBuilder,
     private route: ActivatedRoute,

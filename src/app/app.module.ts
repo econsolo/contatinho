@@ -8,6 +8,7 @@ import { MainPage } from './pages/main/main.page';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Interceptor } from './services/http.interceptor';
 import { AuthGuard } from './services/auth.guard';
+import { MaskPipe } from './pipes/mask.pipe';
 
 @NgModule({
 	declarations: [

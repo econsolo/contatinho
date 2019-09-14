@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, AlertController, ToastController } from '@ionic/angular';
+import { NavController, AlertController, ToastController, ActionSheetController } from '@ionic/angular';
 import { ContactService } from 'src/app/services/contact.service';
 import { Observable } from 'rxjs';
 import { AlertUtil } from 'src/app/utils/alert.util';
@@ -17,7 +17,8 @@ export class HomePage implements OnInit {
   constructor(private navCtrl: NavController,
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
-    private contactService: ContactService) { }
+    private contactService: ContactService,
+    public actionSheetCtrl: ActionSheetController) { }
 
   ngOnInit(): void {
     this.get();
@@ -25,6 +26,41 @@ export class HomePage implements OnInit {
 
   public goToContact(id: string): void {
     this.navCtrl.navigateForward(`/contact/${id}`);
+  }
+
+  public async openActionSheet(contact: any): Promise<void> {
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Opções',
+      buttons: [
+        {
+          text: 'Chamar',
+          icon: 'call',
+          handler: () => {
+            window.open(`tel:${contact.phone}`, '_blank');
+          }
+        },
+        {
+          text: 'Alterar',
+          icon: 'create',
+          handler: () => {
+            this.goToContact(contact.id);
+          }
+        },
+        {
+          text: 'Remover',
+          role: 'destructive',
+          icon: 'trash',
+          handler: () => {
+            this.delete(contact.id);
+          }
+        },
+        {
+          text: 'Cancelar',
+          icon: 'close',
+          role: 'cancel'
+        }]
+    });
+    await actionSheet.present();
   }
 
   public delete(id: string): void {

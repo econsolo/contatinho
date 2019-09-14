@@ -41,7 +41,7 @@ export class SignupPage implements OnInit {
   public back(): void {
     this.nav.navigateBack('/login');
   }
-  
+
   private login(auth: any): void {
     this.authService.login(auth).subscribe((res: any) => {
       AuthUtil.set(res);
@@ -52,26 +52,26 @@ export class SignupPage implements OnInit {
 
   private createFormGroup(): FormGroup {
     let password = this.builder.control('', [
-      Validators.required,
-      Validators.minLength(6),
-      Validators.maxLength(20)
+      CustomValidator.required,
+      CustomValidator.minLength(6),
+      CustomValidator.maxLength(20)
     ]);
     return this.builder.group({
       name: ['', [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(80)
+        CustomValidator.required,
+        CustomValidator.minLength(3),
+        CustomValidator.maxLength(80)
       ]],
       email: ['', [
-        Validators.required,
-        Validators.email
+        CustomValidator.required,
+        CustomValidator.email
       ]],
       password: password,
       password_confirm: ['', [
-        Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(20),
-        CustomValidator.equals(password)
+        CustomValidator.required,
+        CustomValidator.minLength(6),
+        CustomValidator.maxLength(20),
+        CustomValidator.equals(password, CustomValidator.msg_password_dont_match)
       ]]
     });
   }

@@ -2,9 +2,11 @@ import { FormControl, Validators } from '@angular/forms';
 
 export class CustomValidator {
 
-    static equals(control1: FormControl) {
+    static msg_password_dont_match: string = 'As senhas não conferem';
+
+    static equals(control1: FormControl, msg: string) {
         return (control2: FormControl) => {
-            return control1.value === control2.value ? null : { equals: true };
+            return control1.value === control2.value ? null : { equals: msg };
         }
     }
 

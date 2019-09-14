@@ -11,6 +11,7 @@ export class InputFeedbackComponent implements OnInit {
   @Input() label: string;
   @Input() type: string;
   @Input() control: FormControl;
+  @Input() mask: string;
 
   constructor() { }
 

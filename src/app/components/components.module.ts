@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { InputFeedbackComponent } from './input-feedback/input-feedback.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { DirectivesModule } from '../directives/directives.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     CommonModule,
     IonicModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DirectivesModule
   ],
   exports: [
     InputFeedbackComponent

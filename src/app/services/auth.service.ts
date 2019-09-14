@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-
+    
   private apiUrl: string = `${environment.apiUrl}/auth`;
 
   constructor(private http: HttpClient) { }
@@ -16,4 +16,11 @@ export class AuthService {
     return this.http.post<any>(this.apiUrl, auth);
   }
 
+  public forgotPassword(email: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/forgot-password`, email);
+  }
+
+  public resetPassword(passwords: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/reset-password`, passwords);
+  }
 }

@@ -12,18 +12,27 @@
               <ion-list>
 
                 <app-input-feedback type="email" [control]="form.controls.email" label="E-mail"></app-input-feedback>
-                <app-input-feedback type="password" [control]="form.controls.password" label="Senha"></app-input-feedback>
+                <app-input-feedback type="password" [control]="form.controls.password" label="Senha">
+                </app-input-feedback>
 
               </ion-list>
 
               <p>
-                <ion-button type="submit" color="primary" shape="round" fsize="large" expand="full"
+                <ion-button type="submit" color="primary" shape="round" fsize="default" expand="block"
                   [disabled]="form.invalid">
                   Entrar
                 </ion-button>
-                <br />
-                <ion-button routerLink="/signup" color="secondary" fill="clear" size="small" expand="full">
+              </p>
+
+              <p>
+                <ion-button (click)="goTo('/signup')" color="secondary" fill="clear" size="small" expand="block">
                   Criar uma conta
+                </ion-button>
+              </p>
+              <p>
+                <ion-button (click)="goTo('/forgot-password')" color="secondary" fill="clear" size="small"
+                  expand="block">
+                  Esqueci minha senha
                 </ion-button>
               </p>
 
