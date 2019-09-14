@@ -1,0 +1,190 @@
+{
+    "id": "mockoon_export",
+    "appVersion": "1.4.0",
+    "checksum": "ed5552c5607f69a5fd8ec60056b80cdb",
+    "subject": "environment",
+    "data": {
+        "uuid": "e4a17800-d509-11e9-b830-b3820f453b16",
+        "name": "contatinho",
+        "endpointPrefix": "api",
+        "latency": 50,
+        "port": 5000,
+        "routes": [
+            {
+                "uuid": "",
+                "documentation": "",
+                "method": "post",
+                "endpoint": "auth",
+                "body": "{\n    \"name\": \"Erick R. Cônsolo\",\n    \"email\": \"erick.consolo@5by5.com.br\",\n    \"image\": \"https://picsum.photos/300/300\",\n    \"token\": \"163af493-2961-4f70-914f-06f9ed7de689\"\n}",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "dd92fac0-d66c-11e9-97d8-91629b1b9f76",
+                "documentation": "",
+                "method": "post",
+                "endpoint": "auth/forgot-password",
+                "body": "{\n    \"token\": \"dd48d4cc-4663-4c45-b03b-ee60b73b0829\"\n}",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "0c93c490-d671-11e9-97d8-91629b1b9f76",
+                "documentation": "",
+                "method": "post",
+                "endpoint": "auth/reset-password",
+                "body": "{}",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "868e1b00-d50a-11e9-b830-b3820f453b16",
+                "documentation": "",
+                "method": "post",
+                "endpoint": "user",
+                "body": "{\n    \"name\": \"Erick R. Cônsolo\",\n    \"email\": \"erick.consolo@5by5.com.br\",\n    \"image\": \"https://picsum.photos/300/300\",\n    \"token\": \"163af493-2961-4f70-914f-06f9ed7de689\"\n}",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "8155eca0-d576-11e9-b830-b3820f453b16",
+                "documentation": "",
+                "method": "get",
+                "endpoint": "contacts",
+                "body": "[\n    {\n        \"id\": \"9db55124-d576-11e9-bb65-2a2ae2dbcce4\",\n        \"name\": \"Erick Cônsolo\",\n        \"email\": \"erick@consolo.com\",\n        \"phone\": \"16997328281\",\n        \"image\": \"https://picsum.photos/300/300\",\n        \"address\": \"Rua Antônio Bovo, 530, Res das Acácias - Matão SP\"\n    },\n    \n    {\n        \"id\": \"9db55390-d576-11e9-bb65-2a2ae2dbcce4\",\n        \"name\": \"Jaqueline Teixeira\",\n        \"email\": \"jaqueline@teixeira.com\",\n        \"phone\": \"24991604807\",\n        \"image\": \"https://picsum.photos/300/300\",\n        \"address\": \"Rua Carlos Luz, 199, Dom Bosco - Volta Redonda RJ\"\n    },\n    {\n        \"id\": \"9db554ee-d576-11e9-bb65-2a2ae2dbcce4\",\n        \"name\": \"Malu Galvão\",\n        \"email\": \"malu@galvao.com\",\n        \"phone\": \"79989491060\",\n        \"image\": \"https://picsum.photos/300/300\",\n        \"address\": \"Rua Sabino Vasconcelos, 480, Jardim Centenário - Aracaju SE\"\n    }\n]",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "920de740-d577-11e9-b830-b3820f453b16",
+                "documentation": "",
+                "method": "get",
+                "endpoint": "contacts/:id",
+                "body": "{\n    \"id\": \"9db55124-d576-11e9-bb65-2a2ae2dbcce4\",\n    \"name\": \"Erick Cônsolo\",\n    \"email\": \"erick@consolo.com\",\n    \"phone\": \"16997328281\",\n    \"image\": \"https://picsum.photos/300/300\",\n    \"address\": \"Rua Antônio Bovo, 530, Res das Acácias - Matão SP\"\n}",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "9c4fa2c0-d577-11e9-b830-b3820f453b16",
+                "documentation": "",
+                "method": "post",
+                "endpoint": "contacts",
+                "body": "{\n    \"id\": \"6c0550b5-6af0-428e-9263-7cca4f32a8a8\"\n}",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "acb8fda0-d577-11e9-b830-b3820f453b16",
+                "documentation": "",
+                "method": "put",
+                "endpoint": "contacts/:id",
+                "body": "{\n    \"id\": \"6c0550b5-6af0-428e-9263-7cca4f32a8a8\"\n}",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            },
+            {
+                "uuid": "b60f47b0-d577-11e9-b830-b3820f453b16",
+                "documentation": "",
+                "method": "delete",
+                "endpoint": "contacts/:id",
+                "body": "{\n    \"id\": \"6c0550b5-6af0-428e-9263-7cca4f32a8a8\"\n}",
+                "latency": 0,
+                "statusCode": "200",
+                "headers": [
+                    {
+                        "key": "",
+                        "value": ""
+                    }
+                ],
+                "filePath": "",
+                "sendFileAsBody": false
+            }
+        ],
+        "proxyMode": false,
+        "proxyHost": "",
+        "https": false,
+        "cors": true,
+        "headers": [
+            {
+                "key": "Content-Type",
+                "value": "application/json"
+            },
+            {
+                "key": "Access-Control-Allow-Origin",
+                "value": "*"
+            },
+            {
+                "key": "Access-Control-Allow-Methods",
+                "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+            },
+            {
+                "key": "Access-Control-Allow-Headers",
+                "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+            }
+        ]
+    }
+}
